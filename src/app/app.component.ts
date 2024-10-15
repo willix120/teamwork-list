@@ -20,10 +20,7 @@ export class AppComponent {
   }
 
   public addOrEdit = () => {
-    if(this.selectedEmploye.id) {
-      alert('Data saved');
-    } else {
-      alert('add');
+    if(!this.selectedEmploye.id) {
       this.employeList.push({
         id: this.employeList.length+1,
         name: this.selectedEmploye.name,
@@ -32,7 +29,6 @@ export class AppComponent {
       this.selectedEmploye.name = '';
       this.selectedEmploye.country = '';
     }
-
   }
 
   public cancelSelected = () => {
